@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page - MediConnect</title>
+    <link rel="stylesheet" href="download.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="mediaconnect.jpg.jpg" alt="MediConnect Logo" class="logo">
+            <span class="logo-text">MediConnect</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="book_slot.html">Book Slot</a></li>
+                <li><a href="liveconsult.html">Live Consult</a></li>
+                <li><a href="#" class="active">Download</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Download Page</h1>
+        <form id="downloadForm">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </fieldset>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="resultsTable" class="results-table">
+            <!-- Table will be populated by JavaScript -->
+        </div>
+    </main>
+    <script src="download.js"></script>
+</body>
+</html>

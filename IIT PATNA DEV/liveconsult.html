@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Consultation - MediConnect</title>
+    <link rel="stylesheet" href="liveconsult.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="mediaconnect.jpg.jpg" alt="MediConnect Logo" class="logo">
+            <span class="logo-text">MediConnect</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="book_slot.html">Book Slot</a></li>
+                <li><a href="#" class="active">Live Consult</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Live Consultation Appointment</h1>
+        <form id="consultationForm" action="process_consultation.php" method="POST">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="dob">DOB:</label>
+                <input type="date" id="dob" name="dob" required>
+                
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Consultation Details</legend>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Time:</label>
+                <select id="time" name="time" required>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                
+                <label for="speciality">Speciality:</label>
+                <select id="speciality" name="speciality" required>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </fieldset>
+            
+            <div class="disclaimer">
+                <p>
+                    <span class="red">Disclaimer:</span> <br>  All consultations are conducted via Google Meet. Please ensure you have Google Meet installed and configured on your device with a stable internet connection, a working camera, and a microphone. By proceeding, you agree to use Google Meet for the consultation and accept its privacy policy and terms of service. We are not responsible for technical issues arising from the use of the app.
+                </p>
+            </div>
+            
+            <button id="submitBtn" type="submit">Submit</button>
+        </form>
+    </main>
+    <script src="liveconsult.js"></script>
+</body>
+</html>

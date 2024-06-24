@@ -1,0 +1,217 @@
+/* Apply box-sizing to all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    zoom: 2;
+}
+
+header {
+    background-color: #4be2ec;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 33px;
+    width: 40px;
+    margin-left: 20px; /* Adjusted margin for better spacing */
+}
+
+.logo-text {
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    margin-left: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 10px; /* Reduced margin for better fit */
+}
+
+nav ul li a {
+    font-size: 16px; /* Adjusted font size */
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 10px 15px; /* Adjusted padding */
+    position: relative;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 20px;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    height: 300px;
+    margin-left: 100px;
+    width: calc(100% - 200px); /* Adjusted width to be responsive */
+}
+
+.backgroundimg {
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.welcome-section .welcome-text {
+    flex: 1;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.welcome-section .welcome-text h1 {
+    margin-top: 0;
+}
+
+.welcome-section .welcome-image img {
+    height: 250px;
+    margin-left: 20px;
+    max-width: 100%;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
+}
+
+.features-section .feature {
+    text-align: center;
+    flex: 1 1 calc(33% - 40px); /* Adjusted for better fit in responsive design */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.features-section .feature:hover {
+    transform: translateY(-5px);
+}
+
+.features-section .feature img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.features-section .feature h2 {
+    color: #4be2ec;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.features-section .feature p {
+    color: #666;
+    font-size: 16px;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu.active + ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .welcome-section .welcome-image {
+        margin-top: 20px;
+        order: -1;
+        position: static;
+        transform: none;
+    }
+
+    .features-section {
+        flex-direction: column;
+    }
+
+    .features-section .feature {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media only screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px 10px; /* Adjusted padding */
+    }
+
+    .logo-text {
+        font-size: 18px; /* Smaller font size for logo text */
+    }
+}

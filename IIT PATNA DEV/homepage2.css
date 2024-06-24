@@ -1,0 +1,109 @@
+     /* Additional CSS for hamburger menu and responsiveness */
+     body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #4be2ec;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        height: 33px;
+        width: 40px;
+    }
+
+    .logo-text {
+        color: black;
+        font-size: 24px;
+        font-weight: normal;
+        margin-left: 15px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        font-weight: normal;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a.active {
+        background-color: #fff;
+        color: #4be2ec;
+        border-radius: 5px;
+    }
+
+    .hamburger-menu {
+        display: none; /* Hidden by default */
+        cursor: pointer;
+        font-size: 24px;
+        margin-left: 15px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .logo {
+            display: none;
+        }
+
+        .logo-text {
+            margin-left: 0;
+        }
+
+        .hamburger-menu {
+            display: block; /* Show hamburger menu on smaller screens */
+        }
+
+        nav ul {
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust as needed */
+            left: 0;
+            right: 0;
+            background-color: #4be2ec;
+            padding: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide the menu by default */
+        }
+
+        nav ul.show {
+            display: flex; /* Show the menu when active */
+        }
+
+        nav ul li {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li a {
+            padding: 15px;
+        }
+    }
